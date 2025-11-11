@@ -1,3 +1,5 @@
+//Jonathan Conte, adams, pd 4, 
+
 public class MyLinkedList
 {
     private ListNode head;
@@ -40,7 +42,7 @@ public class MyLinkedList
         size++;
 
         return true;
-    }
+    }//add last
 
     public boolean add(Object obj){
         return addLast(obj);
@@ -65,7 +67,7 @@ public class MyLinkedList
             index += 1;
         }
         return current.getValue();
-    }
+    }//add
 
     public Object set(int i, Object newValue){
         if(i < 0 || i >= size){
@@ -80,7 +82,7 @@ public class MyLinkedList
         Object oldValue = current.getValue();
         current.setValue(newValue);
         return oldValue;
-    }
+    }//set
 
     public Object removeFirst(){
         if(head == null){
@@ -90,7 +92,7 @@ public class MyLinkedList
         head = head.getNext();
         size--;
         return value;
-    }
+    }//remove first
 
     public Object removeLast(){
         if(head == null){
@@ -110,7 +112,7 @@ public class MyLinkedList
         current.setNext(null);
         size--;
         return value;
-    }
+    }// remove last
 
     public Object remove(int index){
         if(head == null){
@@ -137,7 +139,22 @@ public class MyLinkedList
         size--;
         return value;
 
+        
+    }//remove
 
-    }
-}
+    public String toString(){
+
+        String result = "";
+        ListNode current = head;
+        int index = 0;
+
+        while (current != null){
+            result += index + ": " + current.getValue() + "\n";
+            current = current.getNext();
+            index++;
+        }
+        return result;
+
+    }//to string
+}//end
 
